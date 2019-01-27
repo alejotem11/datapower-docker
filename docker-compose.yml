@@ -1,0 +1,13 @@
+version: '3'
+services:
+  datapower:
+    image: ibmcom/datapower
+    ports:
+      - "9090:9090"
+    environment:
+      - DATAPOWER_ACCEPT_LICENSE=true
+      - DATAPOWER_INTERACTIVE=true
+      - DATAPOWER_WORKER_THREADS=4
+    volumes:
+      - ./config:/drouter/config
+      - ./local:/drouter/local
